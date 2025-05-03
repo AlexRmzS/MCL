@@ -1,0 +1,138 @@
+:host {
+    display: block;
+    background-color: #331217;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .footer-section {
+    h3 {
+      color: #E18A96;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    h4 {
+      color: #B68D93;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      color: #fff;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: 0.5rem;
+        
+        a {
+          color: #fff;
+          text-decoration: none;
+          opacity: 0.8;
+          transition: opacity 0.3s;
+          font-family: 'Inter', sans-serif;
+          font-size: 0.9rem;
+          
+          &:hover {
+            opacity: 1;
+            color: #E18A96;
+          }
+        }
+      }
+    }
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #B68D93;
+      color: #331217;
+      transition: all 0.3s;
+      font-size: 1.2rem;
+      text-decoration: none;
+      
+      &:hover {
+        background-color: #E18A96;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      &:active {
+        transform: translateY(-2px);
+      }
+    }
+    
+    .fa-facebook-f {
+      // Specific adjustment for Facebook icon to center it
+      padding-left: 2px;
+    }
+    
+    .fa-instagram:hover {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+      color: white;
+    }
+    
+    .fa-twitter:hover {
+      background-color: #1DA1F2;
+      color: white;
+    }
+    
+    .fa-tiktok:hover {
+      background: linear-gradient(45deg, #000000, #EE1D52, #69C9D0);
+      color: white;
+    }
+  }
+  
+  .footer-bottom {
+    background-color: #1f0a0c;
+    padding: 1rem;
+    text-align: center;
+    
+    p {
+      color: #B68D93;
+      font-size: 0.9rem;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .social-icons {
+      justify-content: center;
+      
+      a {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+    }
+  }

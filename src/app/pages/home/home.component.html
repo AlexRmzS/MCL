@@ -1,0 +1,121 @@
+<section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to <span>Maid Café Latte</span></h1>
+      <p>Experience the charm of Japanese café culture in the heart of Monterrey</p>
+      <div class="hero-buttons">
+        <a [routerLink]="['/menu']" class="btn btn-primary">Explore Our Menu</a>
+        <a [routerLink]="['/contact']" class="btn btn-secondary">Reserve a Table</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-content">
+        <div class="intro-text">
+          <h2>A Unique <span>Kawaii</span> Experience</h2>
+          <p>Step into a world where delicious food meets adorable aesthetics. Our café combines authentic Japanese maid café culture with exceptional coffee and delightful treats.</p>
+          <a [routerLink]="['/about']" class="btn btn-outlined">Learn More About Us</a>
+        </div>
+        <div class="intro-image">
+          <img src="/cafe-interior.jpg" alt="Maid Café Latte Interior" class="rounded-image">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="featured-items">
+    <div class="container">
+      <h2>Our Signature <span>Menu</span></h2>
+      <p class="section-subtitle">Handcrafted with love and served with a smile</p>
+      
+      <div class="featured-grid">
+        <div class="featured-card" *ngFor="let product of featuredProducts">
+          <div class="card-image">
+            <img [src]="product.imageUrl" [alt]="product.name">
+          </div>
+          <div class="card-content">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <span class="price">{{ product.price | currency }}</span>
+            <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center view-more">
+        <a [routerLink]="['/menu']" class="btn btn-primary menu-btn">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="experience-section">
+    <div class="container">
+      <div class="experience-content">
+        <div class="experience-video">
+          <video class="cafe-video rounded-image" controls poster="/video-poster.jpg">
+            <source src="/cafe-experience.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="experience-text">
+          <h2>Create <span>Memories</span> With Us</h2>
+          <p>Whether you're looking for a cozy spot to enjoy your morning coffee, a cute lunch destination, or a unique place to celebrate special occasions, Maid Café Latte offers an experience unlike any other.</p>
+          <div class="experience-features">
+            <div class="feature">
+              <div class="feature-icon">🎀</div>
+              <div class="feature-text">
+                <h4>Themed Events</h4>
+                <p>Join our special seasonal celebrations</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📸</div>
+              <div class="feature-text">
+                <h4>Photo Spots</h4>
+                <p>Capture Instagram-worthy moments</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🍰</div>
+              <div class="feature-text">
+                <h4>Custom Orders</h4>
+                <p>Special cakes and treats for your events</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our <span>Guests</span> Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial">
+          <div class="quote">"The most adorable café I've ever visited! The staff was so friendly and the strawberry latte was incredible. Will definitely be back!"</div>
+          <div class="author">- Maria S.</div>
+        </div>
+        <div class="testimonial">
+          <div class="quote">"My daughter loved her birthday celebration at Maid Café Latte. The themed treats and special attention made her day magical!"</div>
+          <div class="author">- Carlos G.</div>
+        </div>
+        <div class="testimonial">
+          <div class="quote">"The atmosphere is so unique and the coffee is excellent. It's become my favorite place to work remotely."</div>
+          <div class="author">- Laura B.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Experience the <span>Magic</span>?</h2>
+      <p>Visit us today or make a reservation for a special treat!</p>
+      <div class="cta-buttons">
+        <a [routerLink]="['/contact']" class="btn btn-primary">Make a Reservation</a>
+        <a [routerLink]="['/menu']" class="btn btn-secondary">Order Online</a>
+      </div>
+    </div>
+  </section>

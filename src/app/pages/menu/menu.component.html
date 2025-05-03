@@ -1,0 +1,42 @@
+<section class="menu-section">
+    <div class="padding">
+      <div class="container">
+        <div class="menu-header">
+          <h1>Our Delicious Menu</h1>
+          <p>Explore our selection of kawaii-inspired drinks, desserts, and more!</p>
+        </div>
+        
+        <div class="category-filter">
+          <button 
+            class="category-btn" 
+            [class.active]="selectedCategory === 'all'"
+            (click)="filterByCategory('all')">
+            All Items
+          </button>
+          <button 
+            *ngFor="let category of categories" 
+            class="category-btn" 
+            [class.active]="selectedCategory === category"
+            (click)="filterByCategory(category)">
+            {{ category | titlecase }}
+          </button>
+        </div>
+        
+        <div class="menu-grid">
+          <div class="menu-item" *ngFor="let product of filteredProducts">
+            <div class="item-image-container">
+              <img [src]="product.imageUrl" [alt]="product.name" class="item-image">
+              <div class="item-overlay">
+                <button class="add-to-cart-btn" (click)="addToCart(product)">Add to Cart</button>
+              </div>
+            </div>
+            <div class="item-details">
+              <h3>{{ product.name }}</h3>
+              <p class="item-description">{{ product.description }}</p>
+              <p class="item-price">{{ product.price | currency }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,39 @@
+<header class="header">
+    <nav class="nav">
+      <a routerLink="/" class="logo-link" (click)="playSound()">
+        <img class="logo" src="/logo.png" alt="MaidCafeLatte Logo">
+      </a>
+      
+      <div class="nav-right">
+        <!-- Desktop Navigation -->
+        <ul class="desktop-menu">
+          <li><a routerLink="/about" class="nav-link" (click)="playSound()">About</a></li>
+          <li><a routerLink="/menu" class="nav-link" (click)="playSound()">Menu</a></li>
+          <li><a routerLink="/contact" class="nav-link" (click)="playSound()">Contact</a></li>
+        </ul>
+  
+        <!-- Cart Icon with Integrated Badge -->
+        <div class="cart-icon-container" (click)="openCart()">
+          <img class="cart-icon" src="/cart.png" alt="Cart">
+          <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Toggle menu">
+          <span class="bar top-bar"></span>
+          <span class="bar middle-bar"></span>
+          <span class="bar bottom-bar"></span>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu-backdrop" [class.active]="menuOpen" (click)="closeMenu()"></div>
+      <div class="mobile-menu" [class.active]="menuOpen">
+        <ul>
+          <li><a routerLink="/about" class="mobile-nav-link" (click)="playSound(); closeMenu()">About</a></li>
+          <li><a routerLink="/menu" class="mobile-nav-link" (click)="playSound(); closeMenu()">Menu</a></li>
+          <li><a routerLink="/contact" class="mobile-nav-link" (click)="playSound(); closeMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
